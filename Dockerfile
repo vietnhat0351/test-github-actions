@@ -9,4 +9,4 @@ FROM openjdk:17-alpine
 WORKDIR /app
 COPY target/*.jar ./test-github-actions-0.0.1-SNAPSHOT.jar
 EXPOSE 8080
-CMD ["java", "-jar", "server.jar"]
+CMD ["java", "-jar", "test-github-actions-0.0.1-SNAPSHOT.jar"]
