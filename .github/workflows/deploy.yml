@@ -1,0 +1,17 @@
+name: Deploy to AWS
+
+on:
+  workflow_run:
+    workflows: ["Docker Image CI"]
+    types:
+      - completed
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pull the Docker image
+        run: sudo docker pull vietnhat0351/github-actions:latest
