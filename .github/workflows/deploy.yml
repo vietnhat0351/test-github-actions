@@ -15,3 +15,7 @@ jobs:
     steps:
       - name: Pull the Docker image
         run: sudo docker pull vietnhat0351/github-actions:latest
+      - name: Delete the running container
+        run: sudo docker rm -f github-actions || true
+      - name: Run the Docker container
+        run: sudo docker run -d -p 8080:8080 --name github-actions vietnhat0351/github-actions:latest
