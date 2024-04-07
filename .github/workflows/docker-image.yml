@@ -13,6 +13,15 @@ jobs:
     runs-on: linux
 
     steps:
+    - uses: actions/setup-java@v3
+      name: Set up JDK 17
+      with:
+        distribution: 'corretto'
+        java-version: '17'
+    - name: Build with Maven
+      run: |
+        mvn clean
+        mvn -B package --file pom.xml
     - uses: actions/checkout@v3
     - name: Login to DockerHub
       env:
