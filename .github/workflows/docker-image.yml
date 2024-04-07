@@ -18,9 +18,9 @@ jobs:
       env:
         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      run: sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
     - name: Build the Docker image
-      run: docker build -t vietnhat0351/github-actions .
+      run: sudo docker build -t vietnhat0351/github-actions .
     - name: Push to Dockerhub
-      run: docker push vietnhat0351/github-actions:latest
+      run: sudo docker push vietnhat0351/github-actions:latest
